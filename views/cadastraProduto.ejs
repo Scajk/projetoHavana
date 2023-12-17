@@ -1,0 +1,14 @@
+<%- include("topo") %>
+    <% if(typeof(nome)=='undefind' ){%>
+        Seja bem-vindx!
+        <%}else{%>
+            Olá, <%=nome %> !
+                <% } %>
+                    <form action='/insereProdutos' method='post'>
+                        Código do Produto: <input type='text' name='codigo' id='codigo'><br>
+                        Nome do Produto: <input type='text' name='nome' id='nome'> <br>
+                        Preço: <input type='text' name='preco' id='preco'> <br>
+                        Marca: <input type='text' name='marca' id='marca'> <br>
+                        <input type='submit' value='Cadastrar'>
+                    </form>
+                    <%- include("rodape") %>

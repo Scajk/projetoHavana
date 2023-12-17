@@ -1,0 +1,34 @@
+<%- include ("topo") %>
+<table>
+    <tr>
+        <th>Login</th>
+        <th>Nome</th>
+        <th>Senha</th>
+        <th>Perfil</th>
+        <th>Alterar</th>
+        <th>Excluir</th>
+    </tr>
+
+    <% for (var i=0; i < cadastrados.length; i++) { %>
+        <tr>
+            <td>
+                <%=cadastrados[i].login %>
+            </td>
+            <td>
+                <%=cadastrados[i].nome %>
+            </td>
+            <td>
+                <%=cadastrados[i].senha %>
+            </td>
+            <td>
+                <%=cadastrados[i].perfil %>
+            </td>
+
+            <td> <a href='/alteraUsuario?id= <%= cadastrados[i].id %>'> Alterar </a></td>
+            <td> <a href='/excluiUsuario?id= <%= cadastrados[i].id %>' onclick="return confirm('Tem certeza que deseja excluir?')"> Excluir </a></td>
+</tr>
+<%
+}
+%>
+</table>
+<%- include ("rodape") %>
